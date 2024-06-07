@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" id="loginform">
+            <label for="username1">Username</label>
+            <input type="text" id="username1">
+            <br>
+            <label for="password1">password</label>
+            <input type="password" id="password">
+            <br>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    document.getElementById("loginform").addEventListener('submit',function(e){
+        e.preventDefault();
+        var password = document.getElementById('password').value
+        var storedpassword = localStorage.getItem('signupPassword');
+
+
+        if(password == storedpassword){
+            alert('success');
+        }else{
+            alert('password does not match')
+        }
+        console.log(storedpassword)
+        console.log(password)
+    })
+</script>
+
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+    }
+    form input{
+        margin-top: 10px;
+    }
+    button{
+        margin-top: 20px;
+    }
+    form{
+        border: 1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    }
+</style>
